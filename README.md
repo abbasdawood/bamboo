@@ -39,6 +39,34 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+### `npm generate`
+
+A new React app doesn’t ship with much; directory structure and dependencies are largely left up to the developer. This can be nice, but the lack of uniformity among React applications makes tools such as React component generators a bit harder to tackle.
+
+These helpers will allow to create components, services and other things to be auto scaffolded so you can start writing code immediately.
+
+```
+# Generate a single-use component
+npm run generate page <name>
+# Generate page called Home
+npm run generate page Home
+
+# Generate a reusable component
+npm run generate component <name>
+# Generate a component called DogCard
+npm run generate component DogCard
+
+# Generate a custom hook
+npm run generate hook <name>
+# Generate a hook called useAsync
+npm run generate hook useAsync
+
+# Generate a service
+npm run generate service <name>
+# Generate a service called petApi
+npm run generate service petApi
+```
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
