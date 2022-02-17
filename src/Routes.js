@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Dashboard, Invoices } from './pages';
+import { Dashboard, Invoices, PurchaseOrder, PurchaseOrders } from './pages';
 import App from './App';
 
 function MainRouter() {
@@ -7,8 +7,8 @@ function MainRouter() {
         <Routes>
             <Route path="/app" element={<App />}>
                 <Route path="dashboard" element={<Dashboard/>} />
-                <Route path="purchase-orders" element="">
-                    <Route path=":purchaseOrderId" element="" />
+                <Route path="purchase-orders" element={<PurchaseOrders/>}>
+                    <Route path=":purchaseOrderId" element={<PurchaseOrder/>} />
                 </Route>
                 <Route path="deliveries" element="" />
                 <Route path="finance">

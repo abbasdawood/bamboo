@@ -44,7 +44,7 @@ const SideNavigation = props => {
           <Link to="/app/dashboard">Dashboard</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Purchase Orders
+          <Link to="/app/purchase-orders">Purchase Orders</Link>
         </Menu.Item>
         <SubMenu key="sub1" icon={<UserOutlined />} title="Dispatches">
           <Menu.Item key="3">Ongoing</Menu.Item>
