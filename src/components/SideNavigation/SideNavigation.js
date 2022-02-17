@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './SideNavigation.module.scss';
 
+import { Link, useResolvedPath, useMatch } from 'react-router-dom';
+
 import { Layout, Menu } from 'antd';
 
 import {
@@ -17,6 +19,11 @@ const { SubMenu } = Menu;
 
 const SideNavigation = props => {
 
+  // TODO: Add code to open the correct sub menu and highlight the subpath based on location / route
+
+  // let resolved = useResolvedPath(to);
+  // let match = useMatch({path: resolved.pathname, end: true});
+
   const onCollapse = (collapsed, type) => {
     console.log(collapsed, type);
   };
@@ -25,31 +32,33 @@ const SideNavigation = props => {
 
   return (
     <Sider onCollapse={onCollapse}
-    breakpoint="md"
-    collapsedWidth="0"
-    onBreakpoint={broken => {
-      console.log(broken);
-    }}
+      breakpoint="md"
+      collapsedWidth="0"
+      onBreakpoint={broken => {
+        console.log(broken);
+      }}
     >
       <div className={style.logo} />
       <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-        <Menu.Item key="1" icon={<PieChartOutlined />}>
-          Option 1
+        <Menu.Item key="/app/dashboard" icon={<PieChartOutlined />}>
+          <Link to="/app/dashboard">Dashboard</Link>
         </Menu.Item>
         <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Option 2
+          Purchase Orders
         </Menu.Item>
-        <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3">Tom</Menu.Item>
-          <Menu.Item key="4">Bill</Menu.Item>
-          <Menu.Item key="5">Alex</Menu.Item>
+        <SubMenu key="sub1" icon={<UserOutlined />} title="Dispatches">
+          <Menu.Item key="3">Ongoing</Menu.Item>
+          <Menu.Item key="4">Past</Menu.Item>
         </SubMenu>
-        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-          <Menu.Item key="6">Team 1</Menu.Item>
-          <Menu.Item key="8">Team 2</Menu.Item>
+        <SubMenu key="/app/finance" icon={<TeamOutlined />} title="Finance">
+          <Menu.Item key="/app/finance/invoices">
+            <Link to="/app/finance/invoices">Invoices</Link>
+          </Menu.Item>
+          <Menu.Item key="">Payments</Menu.Item>
+          <Menu.Item key="8">Advances</Menu.Item>
         </SubMenu>
         <Menu.Item key="9" icon={<FileOutlined />}>
-          Files
+          Reports
         </Menu.Item>
       </Menu>
     </Sider>
