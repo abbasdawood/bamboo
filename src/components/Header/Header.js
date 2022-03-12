@@ -16,6 +16,7 @@ const { Search } = Input;
 const Header = props => {
   return (
       <PageHeader
+      ghost={false}
         className={style['top-page-header']}
         // onBack={() => window.history.back()}
         extra={[

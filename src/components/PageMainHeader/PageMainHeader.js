@@ -12,6 +12,7 @@ const PageMainHeader = props => {
   return (
     <PageHeader
       className={style['secondary-page-header']}
+      ghost={false}
       // onBack={() => window.history.back()}
       title="Title"
       subTitle="This is a subtitle"

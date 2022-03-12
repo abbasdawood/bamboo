@@ -8,7 +8,7 @@ function MainRouter() {
             <Route path="/app" element={<App />}>
                 <Route path="dashboard" element={<Dashboard/>} />
                 <Route path="purchase-orders" element={<PurchaseOrders/>}>
-                    <Route path=":purchaseOrderId" element={<PurchaseOrder/>} />
+                    <Route path=":purchaseOrderId" element={<PurchaseOrder/>} key="1"/>
                 </Route>
                 <Route path="deliveries" element="" />
                 <Route path="finance">
